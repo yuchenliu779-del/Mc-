@@ -8,5 +8,7 @@
   "screen.maidmanagement.farmer": "種植",
   "screen.maidmanagement.fighter": "戰鬥",
   "screen.maidmanagement.selected": "目前選擇的職業：",
-  "screen.maidmanagement.preview": "預覽介面：尚未指派女僕"
+  "screen.maidmanagement.preview": "預覽介面：尚未指派女僕",
+  "screen.maidmanagement.nearby": "附近女僕：%s 隻（16 格內）",
+  "screen.maidmanagement.scan_only": "偵測測試：尚未登記或指派"
 }

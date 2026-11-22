@@ -7,5 +7,7 @@
   "screen.maidmanagement.farmer": "Farmer",
   "screen.maidmanagement.fighter": "Fighter",
   "screen.maidmanagement.selected": "Selected job:",
-  "screen.maidmanagement.preview": "Preview only: no maid assignment yet"
+  "screen.maidmanagement.preview": "Preview only: no maid assignment yet",
+  "screen.maidmanagement.nearby": "Nearby maids: %s (16 blocks)",
+  "screen.maidmanagement.scan_only": "Scan preview: no registration yet"
 }

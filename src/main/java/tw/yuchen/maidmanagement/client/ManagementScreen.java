@@ -45,9 +45,12 @@ public final class ManagementScreen extends AbstractContainerScreen<ManagementMe
     @Override
     protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         graphics.drawString(font, title, 14, 14, 0xFFFFFFFF, false);
-        graphics.drawString(font, Component.translatable("screen.maidmanagement.selected"), 15, 118, 0xFFFFFFFF, false);
-        graphics.drawString(font, Component.translatable(JOBS[selected]), 15, 135, 0xFFFFDD88, false);
-        graphics.drawString(font, Component.translatable("screen.maidmanagement.preview"), 15, 159, 0xFFCCCCCC, false);
+        graphics.drawString(font, Component.translatable("screen.maidmanagement.selected"), 15, 112, 0xFFFFFFFF, false);
+        graphics.drawString(font, Component.translatable(JOBS[selected]), 15, 128, 0xFFFFDD88, false);
+        graphics.drawString(font, Component.translatable("screen.maidmanagement.nearby", menu.nearbyMaidCount()),
+                15, 146, 0xFFAAFFAA, false);
+        graphics.drawString(font, Component.translatable("screen.maidmanagement.scan_only"),
+                15, 166, 0xFFCCCCCC, false);
     }
 
     @Override
