@@ -18,7 +18,7 @@ public final class ManagementScreen extends AbstractContainerScreen<ManagementMe
     public ManagementScreen(ManagementMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         imageWidth = 248;
-        imageHeight = 220;
+        imageHeight = 250;
         inventoryLabelY = 1000;
     }
 
@@ -38,7 +38,10 @@ public final class ManagementScreen extends AbstractContainerScreen<ManagementMe
         }
         addRenderableWidget(Button.builder(Component.translatable("screen.maidmanagement.register"),
                 button -> clickServerButton(4))
-                .bounds(leftPos + 15, topPos + 179, 218, 24).build());
+                .bounds(leftPos + 15, topPos + 189, 218, 22).build());
+        addRenderableWidget(Button.builder(Component.translatable("screen.maidmanagement.unregister"),
+                button -> clickServerButton(5))
+                .bounds(leftPos + 15, topPos + 216, 218, 22).build());
     }
 
     @Override
@@ -57,7 +60,9 @@ public final class ManagementScreen extends AbstractContainerScreen<ManagementMe
         graphics.drawString(font, Component.translatable("screen.maidmanagement.nearby", menu.nearbyMaidCount()),
                 15, 145, 0xFFAAFFAA, false);
         graphics.drawString(font, Component.translatable("screen.maidmanagement.registered", menu.registeredCount()),
-                15, 160, 0xFFFFFFFF, false);
+                15, 159, 0xFFFFFFFF, false);
+        graphics.drawString(font, Component.translatable("screen.maidmanagement.job_count",
+                menu.jobCount(menu.selectedJob())), 15, 174, 0xFFFFFFFF, false);
     }
 
     @Override

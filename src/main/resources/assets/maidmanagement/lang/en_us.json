@@ -14,5 +14,9 @@
   "screen.maidmanagement.registered": "Registered maids: %s",
   "message.maidmanagement.no_maid": "No nearby maid found",
   "message.maidmanagement.registered": "Maid job recorded (AI not controlled yet)",
-  "message.maidmanagement.claimed": "Maid already registered by another player"
+  "message.maidmanagement.claimed": "Maid already registered by another player",
+  "screen.maidmanagement.unregister": "Unregister nearest maid",
+  "screen.maidmanagement.job_count": "Registered for this job: %s",
+  "message.maidmanagement.unregistered": "Maid unregistered",
+  "message.maidmanagement.not_registered": "This maid is not registered to you"
 }

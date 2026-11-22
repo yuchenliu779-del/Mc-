@@ -22,7 +22,7 @@ public final class ManagementMenu extends AbstractContainerMenu {
     private static final int SEARCH_RADIUS = 16;
     private final BlockPos position;
     private final Player player;
-    private final ContainerData data = new SimpleContainerData(3);
+    private final ContainerData data = new SimpleContainerData(7);
 
     public ManagementMenu(int id, Inventory inventory, FriendlyByteBuf buf) {
         this(id, inventory, buf.readBlockPos());
@@ -49,12 +49,16 @@ public final class ManagementMenu extends AbstractContainerMenu {
     private void updateData() {
         if (!(player.level() instanceof ServerLevel level)) return;
         data.set(0, Math.min(nearbyMaids().size(), 32767));
-        data.set(1, Math.min(MaidRegistryData.get(level).count(player.getUUID()), 32767));
+        MaidRegistryData registry = MaidRegistryData.get(level);
+        data.set(1, Math.min(registry.count(player.getUUID()), 32767));
+        for (int job = 0; job < 4; job++)
+            data.set(3 + job, Math.min(registry.countByJob(player.getUUID(), job), 32767));
     }
 
     public int nearbyMaidCount() { return data.get(0); }
     public int registeredCount() { return data.get(1); }
     public int selectedJob() { return data.get(2); }
+    public int jobCount(int job) { return data.get(3 + Math.max(0, Math.min(3, job))); }
 
     @Override
     public boolean clickMenuButton(Player player, int buttonId) {
@@ -64,7 +68,7 @@ public final class ManagementMenu extends AbstractContainerMenu {
             broadcastChanges();
             return true;
         }
-        if (buttonId != 4) return false;
+        if (buttonId != 4 && buttonId != 5) return false;
         List<Entity> nearby = nearbyMaids();
         if (nearby.isEmpty()) {
             player.displayClientMessage(Component.translatable("message.maidmanagement.no_maid"), false);
@@ -74,9 +78,13 @@ public final class ManagementMenu extends AbstractContainerMenu {
                 a.distanceToSqr(player), b.distanceToSqr(player))).orElse(null);
         if (nearest == null) return true;
         // The registry is an addon-owned record only; it does not change the maid's native AI.
-        boolean ok = MaidRegistryData.get(level).register(nearest.getUUID(), player.getUUID(), data.get(2));
-        player.displayClientMessage(Component.translatable(ok
-                ? "message.maidmanagement.registered" : "message.maidmanagement.claimed"), false);
+        boolean ok = buttonId == 4
+                ? MaidRegistryData.get(level).register(nearest.getUUID(), player.getUUID(), data.get(2))
+                : MaidRegistryData.get(level).unregister(nearest.getUUID(), player.getUUID());
+        String message = buttonId == 4
+                ? (ok ? "message.maidmanagement.registered" : "message.maidmanagement.claimed")
+                : (ok ? "message.maidmanagement.unregistered" : "message.maidmanagement.not_registered");
+        player.displayClientMessage(Component.translatable(message), false);
         updateData();
         broadcastChanges();
         return true;

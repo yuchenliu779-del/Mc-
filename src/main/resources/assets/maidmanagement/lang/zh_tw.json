@@ -15,5 +15,9 @@
   "screen.maidmanagement.registered": "已登記女僕：%s 隻",
   "message.maidmanagement.no_maid": "附近沒有可登記的女僕",
   "message.maidmanagement.registered": "已記錄女僕的職業設定（尚未控制 AI）",
-  "message.maidmanagement.claimed": "這隻女僕已由其他玩家登記"
+  "message.maidmanagement.claimed": "這隻女僕已由其他玩家登記",
+  "screen.maidmanagement.unregister": "取消最近女僕的登記",
+  "screen.maidmanagement.job_count": "此職業已登記：%s 隻",
+  "message.maidmanagement.unregistered": "已取消女僕登記",
+  "message.maidmanagement.not_registered": "這隻女僕不在你的登記名單"
 }

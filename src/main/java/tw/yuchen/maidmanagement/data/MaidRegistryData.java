@@ -42,6 +42,21 @@ public final class MaidRegistryData extends SavedData {
         return true;
     }
 
+    public boolean unregister(UUID maid, UUID owner) {
+        Entry entry = entries.get(maid);
+        if (entry == null || !entry.owner().equals(owner)) return false;
+        entries.remove(maid);
+        setDirty();
+        return true;
+    }
+
+    public int countByJob(UUID owner, int job) {
+        int count = 0;
+        for (Entry entry : entries.values())
+            if (entry.owner().equals(owner) && entry.job() == job) count++;
+        return count;
+    }
+
     public int count(UUID owner) {
         int count = 0;
         for (Entry entry : entries.values()) if (entry.owner().equals(owner)) count++;
