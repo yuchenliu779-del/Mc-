@@ -9,5 +9,10 @@
   "screen.maidmanagement.selected": "Selected job:",
   "screen.maidmanagement.preview": "Preview only: no maid assignment yet",
   "screen.maidmanagement.nearby": "Nearby maids: %s (16 blocks)",
-  "screen.maidmanagement.scan_only": "Scan preview: no registration yet"
+  "screen.maidmanagement.scan_only": "Scan preview: no registration yet",
+  "screen.maidmanagement.register": "Register nearest maid for selected job",
+  "screen.maidmanagement.registered": "Registered maids: %s",
+  "message.maidmanagement.no_maid": "No nearby maid found",
+  "message.maidmanagement.registered": "Maid job recorded (AI not controlled yet)",
+  "message.maidmanagement.claimed": "Maid already registered by another player"
 }
