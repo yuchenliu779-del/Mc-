@@ -1,5 +1,11 @@
 {
   "block.maidmanagement.management_center": "Maid Management Center",
   "item.maidmanagement.management_center": "Maid Management Center",
-  "message.maidmanagement.center_ready": "Management Center ready. Job assignment UI is coming in the next phase."
+  "screen.maidmanagement.title": "Maid Management Center",
+  "screen.maidmanagement.lumberjack": "Lumberjack",
+  "screen.maidmanagement.miner": "Miner",
+  "screen.maidmanagement.farmer": "Farmer",
+  "screen.maidmanagement.fighter": "Fighter",
+  "screen.maidmanagement.selected": "Selected job:",
+  "screen.maidmanagement.preview": "Preview only: no maid assignment yet"
 }

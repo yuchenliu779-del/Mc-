@@ -1,5 +1,12 @@
 {
   "block.maidmanagement.management_center": "女僕管理中心",
   "item.maidmanagement.management_center": "女僕管理中心",
-  "message.maidmanagement.center_ready": "女僕管理中心已啟動：工作分配介面將於下一階段加入。"
+  "message.maidmanagement.center_ready": "女僕管理中心已啟動",
+  "screen.maidmanagement.title": "女僕管理中心",
+  "screen.maidmanagement.lumberjack": "伐木",
+  "screen.maidmanagement.miner": "挖礦",
+  "screen.maidmanagement.farmer": "種植",
+  "screen.maidmanagement.fighter": "戰鬥",
+  "screen.maidmanagement.selected": "目前選擇的職業：",
+  "screen.maidmanagement.preview": "預覽介面：尚未指派女僕"
 }
