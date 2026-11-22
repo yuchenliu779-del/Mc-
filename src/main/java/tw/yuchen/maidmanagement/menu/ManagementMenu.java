@@ -7,6 +7,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.OwnableEntity;
+import java.util.UUID;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -74,9 +76,15 @@ public final class ManagementMenu extends AbstractContainerMenu {
             player.displayClientMessage(Component.translatable("message.maidmanagement.no_maid"), false);
             return true;
         }
-        Entity nearest = nearby.stream().min((a, b) -> Double.compare(
+        // Only a maid owned by this player can be registered or unregistered.
+        Entity nearest = nearby.stream().filter(e -> e instanceof OwnableEntity ownable
+                && player.getUUID().equals(ownable.getOwnerUUID()))
+                .min((a, b) -> Double.compare(
                 a.distanceToSqr(player), b.distanceToSqr(player))).orElse(null);
-        if (nearest == null) return true;
+        if (nearest == null) {
+            player.displayClientMessage(Component.translatable("message.maidmanagement.not_owner"), false);
+            return true;
+        }
         // The registry is an addon-owned record only; it does not change the maid's native AI.
         boolean ok = buttonId == 4
                 ? MaidRegistryData.get(level).register(nearest.getUUID(), player.getUUID(), data.get(2))

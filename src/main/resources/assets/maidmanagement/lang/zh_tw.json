@@ -19,5 +19,6 @@
   "screen.maidmanagement.unregister": "取消最近女僕的登記",
   "screen.maidmanagement.job_count": "此職業已登記：%s 隻",
   "message.maidmanagement.unregistered": "已取消女僕登記",
-  "message.maidmanagement.not_registered": "這隻女僕不在你的登記名單"
+  "message.maidmanagement.not_registered": "這隻女僕不在你的登記名單",
+  "message.maidmanagement.not_owner": "附近沒有屬於你的女僕，無法登記或取消登記"
 }

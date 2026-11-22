@@ -18,5 +18,6 @@
   "screen.maidmanagement.unregister": "Unregister nearest maid",
   "screen.maidmanagement.job_count": "Registered for this job: %s",
   "message.maidmanagement.unregistered": "Maid unregistered",
-  "message.maidmanagement.not_registered": "This maid is not registered to you"
+  "message.maidmanagement.not_registered": "This maid is not registered to you",
+  "message.maidmanagement.not_owner": "No nearby maid owned by you; cannot change registration"
 }
