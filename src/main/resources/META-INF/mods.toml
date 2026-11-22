@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All rights reserved"
+
+[[mods]]
+modId="maidmanagement"
+version="${file.jarVersion}"
+displayName="Touhou Maid Management"
+authors="yuchenliu779-del"
+description='''A cautious management-center addon for Touhou Little Maid.'''
+
+[[dependencies.maidmanagement]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.maidmanagement]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.maidmanagement]]
+modId="touhou_little_maid"
+mandatory=false
+versionRange="[0,)"
+ordering="AFTER"
+side="BOTH"

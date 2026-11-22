@@ -1,0 +1,23 @@
+{
+  "block.maidmanagement.management_center": "Maid Management Center",
+  "item.maidmanagement.management_center": "Maid Management Center",
+  "screen.maidmanagement.title": "Maid Management Center",
+  "screen.maidmanagement.lumberjack": "Lumberjack",
+  "screen.maidmanagement.miner": "Miner",
+  "screen.maidmanagement.farmer": "Farmer",
+  "screen.maidmanagement.fighter": "Fighter",
+  "screen.maidmanagement.selected": "Selected job:",
+  "screen.maidmanagement.preview": "Preview only: no maid assignment yet",
+  "screen.maidmanagement.nearby": "Nearby maids: %s (16 blocks)",
+  "screen.maidmanagement.scan_only": "Scan preview: no registration yet",
+  "screen.maidmanagement.register": "Register nearest maid for selected job",
+  "screen.maidmanagement.registered": "Registered maids: %s",
+  "message.maidmanagement.no_maid": "No nearby maid found",
+  "message.maidmanagement.registered": "Maid job recorded (AI not controlled yet)",
+  "message.maidmanagement.claimed": "Maid already registered by another player",
+  "screen.maidmanagement.unregister": "Unregister nearest maid",
+  "screen.maidmanagement.job_count": "Registered for this job: %s",
+  "message.maidmanagement.unregistered": "Maid unregistered",
+  "message.maidmanagement.not_registered": "This maid is not registered to you",
+  "message.maidmanagement.not_owner": "No nearby maid owned by you; cannot change registration"
+}
